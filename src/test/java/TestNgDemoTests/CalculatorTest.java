@@ -1,8 +1,10 @@
+package TestNgDemoTests;
+
 import Lesson17.Calculator;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class CalculatorTest {
+public class CalculatorTest extends BaseTest {
 
     Calculator calculator;
 
@@ -10,16 +12,6 @@ public class CalculatorTest {
     public void initCalculator() {
         System.out.println("I run before CLASS");
         calculator = new Calculator();
-    }
-
-    @BeforeTest
-    public void beforeTest() {
-        System.out.println("I run before TEST");
-    }
-
-    @AfterTest
-    public void afterTest() {
-        System.out.println("I run after TEST");
     }
 
     /*@DataProvider(name = "sumTestDataProvider")
