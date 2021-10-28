@@ -9,19 +9,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class SeleniumDevTest {
-    WebDriver driver;
-
-    @BeforeTest
-    public void setUp() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-    }
-
-    @AfterTest
-    public void tearDown() {
-        driver.quit();
-    }
+public class SeleniumDevTest extends UIBaseTest {
 
     @Test
     public void driverActionsTest() {
