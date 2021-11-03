@@ -16,7 +16,7 @@ public class XPathTest extends UIBaseTest {
         WebElement test1 = driver.findElement(By.xpath("//*[@value='value1']"));
 
         WebElement siblingInput = driver.findElement(By.xpath("//label[@for='father_name']/following-sibling::div/input"));
-        WebElement parentChildInput2 = driver.findElement(By.xpath("//label[@for='father_name']/following-sibling::div/input"));
+        WebElement parentDescendantInput = driver.findElement(By.xpath("//label[@for='father_name']/parent::div//input"));
 
         Select courseSelect = new Select(driver.findElement(By.xpath("//select[@id='course']")));
         courseSelect.selectByVisibleText("Computer Course");
