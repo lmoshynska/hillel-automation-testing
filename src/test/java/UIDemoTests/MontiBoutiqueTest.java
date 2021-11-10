@@ -49,18 +49,18 @@ public class MontiBoutiqueTest extends UIBaseTest {
 
     }
 
-    @DataProvider
+    /*@DataProvider
     public Object[][] designerNamesDataProvider() {
         return new Object[][] {
                 {"alexander mcqueen "},
                 {"alexander wang"},
                 {"balenciaga"}
         };
-    }
+    }*/
 
 
-    @Test(dataProvider = "designerNamesDataProvider")
-    public void checkFilteringByBrand(String designer) {
+    @Test
+    public void checkFilteringByBrand() {
 
         driver.get(url);
 
@@ -74,12 +74,9 @@ public class MontiBoutiqueTest extends UIBaseTest {
         String expectedTitle = "Women's Bags";
         Assert.assertTrue(driver.getTitle().contains(expectedTitle));
 
-        //String designer = "balenciaga";
-        //WebElement designerFilterOption = driver.findElement(By.xpath("//div[@class='filters no-mobile']//label[text()='" + designer +"']"));
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@class='filters no-mobile']//label[text()='" + designer +"']")))).click();
-        //designerFilterOption.click();
-
-
+        String designer = "balenciaga";
+        WebElement designerFilterOption = driver.findElement(By.xpath("//div[@class='filters no-mobile']//label[text()='" + designer +"']"));
+        designerFilterOption.click();
 
         List<WebElement> designerTitles = driver.findElements(By.cssSelector(".products span.brand"));
 
