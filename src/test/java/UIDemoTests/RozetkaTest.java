@@ -3,6 +3,7 @@ package UIDemoTests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -11,7 +12,7 @@ import java.util.List;
 public class RozetkaTest extends UIBaseTest {
 
     @Test
-    public void testAddingProductToCart() throws InterruptedException {
+    public void testAddingProductToCart() {
         driver.get("https://rozetka.com.ua/");
         String searchText = "Xbox Series X 1Tb";
 
@@ -22,9 +23,10 @@ public class RozetkaTest extends UIBaseTest {
         WebElement searchButton = driver.findElement(By.cssSelector(".button.button_color_green"));
         searchButton.click();
 
+        //wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".content_type_catalog .goods-tile__heading")));
         WebElement productTitle = driver.findElement(By.cssSelector(".content_type_catalog .goods-tile__heading"));
         productTitle.click();
-        
+
         WebElement selectedProductTitle = driver.findElement(By.cssSelector("h1.product__title"));
         System.out.println("Product text: " + selectedProductTitle.getText());
         Assert.assertTrue(selectedProductTitle.getText().toLowerCase().contains(searchText.toLowerCase()));

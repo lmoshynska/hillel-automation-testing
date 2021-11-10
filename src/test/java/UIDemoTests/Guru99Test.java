@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class Guru99Test extends UIBaseTest {
-    String url = "https://demo.guru99.com/Agile_Project/Agi_V1/index.php";
+    String url = "http://demo.guru99.com/Agile_Project/Agi_V1/index.php";
     String validLogin = "1303";
     String validPassword = "Guru99";
 
