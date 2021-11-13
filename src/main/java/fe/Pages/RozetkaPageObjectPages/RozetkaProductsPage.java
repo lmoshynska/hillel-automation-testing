@@ -1,4 +1,4 @@
-package UIDemoPages.Pages.RozetkaPageObjectPages;
+package fe.Pages.RozetkaPageObjectPages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

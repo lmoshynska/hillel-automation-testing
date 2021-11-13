@@ -1,8 +1,10 @@
 package TestNgDemoTests;
 
-import Lesson17.Calculator;
+import fe.Lesson17.Calculator;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 public class CalculatorTest extends BaseTest {
 

@@ -1,13 +1,13 @@
-package UIDemoPages.Pages.RozetkaPageFactoryPages;
+package fe.Pages.RozetkaPageFactoryPages;
 
+import fe.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class RozetkaPageFactoryMainPage {
+import java.util.List;
 
-    WebDriver driver;
+public class TopPanelFragment extends BasePage {
 
     @FindBy(xpath="//input[@name='search']")
     private WebElement searchField;
@@ -15,15 +15,28 @@ public class RozetkaPageFactoryMainPage {
     @FindBy(css=".button.button_color_green")
     private WebElement searchButton;
 
-    public RozetkaPageFactoryMainPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+    @FindBy(css="span.counter")
+    private WebElement cartCounter;
+
+    @FindBy(css="span.counter")
+    private List<WebElement> cartCounterCollection;
+
+    public TopPanelFragment(WebDriver driver) {
+        super(driver);
     }
 
     public RozetkaPageFactoryProductsPage performSearch(String searchText) {
         enterTextIntoSearchField(searchText);
         clickSearchButton();
         return new RozetkaPageFactoryProductsPage(driver);
+    }
+
+    public boolean isCartEmpty() {
+        return cartCounterCollection.isEmpty();
+    }
+
+    public String getCartLabelText() {
+        return cartCounter.getText();
     }
 
     private void enterTextIntoSearchField(String searchText) {
@@ -34,5 +47,3 @@ public class RozetkaPageFactoryMainPage {
         searchButton.click();
     }
 }
-
-

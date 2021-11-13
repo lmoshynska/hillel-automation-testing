@@ -4,13 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 public class MontiBoutiqueTest extends UIBaseTest {
 
@@ -80,8 +79,11 @@ public class MontiBoutiqueTest extends UIBaseTest {
 
         List<WebElement> designerTitles = driver.findElements(By.cssSelector(".products span.brand"));
 
+        SoftAssert softAssert = new SoftAssert();
+
         for (WebElement designerTitle : designerTitles) {
-            Assert.assertEquals(designerTitle.getText().toLowerCase(), designer);
+            softAssert.assertEquals(designerTitle.getText().toLowerCase(), designer);
         }
+        softAssert.assertAll();
     }
 }
