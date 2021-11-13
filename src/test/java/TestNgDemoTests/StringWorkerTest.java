@@ -1,6 +1,6 @@
 package TestNgDemoTests;
 
-import Lesson17.StringWorker;
+import fe.Lesson17.StringWorker;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;

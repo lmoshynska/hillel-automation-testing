@@ -1,22 +1,17 @@
-package UIDemoPages.Pages.RozetkaPageFactoryPages;
+package fe.Pages.RozetkaPageFactoryPages;
 
-import UIDemoPages.Pages.RozetkaPageObjectPages.RozetkaProductDetailsPage;
-import org.openqa.selenium.By;
+import fe.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class RozetkaPageFactoryProductsPage {
-
-    WebDriver driver;
+public class RozetkaPageFactoryProductsPage extends BasePage {
 
     @FindBy(css=".content_type_catalog .goods-tile__heading")
     private WebElement productTitle;
 
     public RozetkaPageFactoryProductsPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     public RozetkaPageFactoryProductDetailsPage clickProductTitle() {

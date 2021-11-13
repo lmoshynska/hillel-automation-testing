@@ -1,9 +1,9 @@
 package PageObjectTests;
 
-import UIDemoPages.Pages.RozetkaPageObjectPages.RozetkaMainPage;
-import UIDemoPages.Pages.RozetkaPageObjectPages.RozetkaProductDetailsPage;
-import UIDemoPages.Pages.RozetkaPageObjectPages.RozetkaProductsPage;
 import UIDemoTests.UIBaseTest;
+import fe.Pages.RozetkaPageObjectPages.RozetkaMainPage;
+import fe.Pages.RozetkaPageObjectPages.RozetkaProductDetailsPage;
+import fe.Pages.RozetkaPageObjectPages.RozetkaProductsPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

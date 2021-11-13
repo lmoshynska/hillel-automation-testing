@@ -1,4 +1,4 @@
-package Lesson17;
+package fe.Lesson17;
 
 public class StringWorker {
 
