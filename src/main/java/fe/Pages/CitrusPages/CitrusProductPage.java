@@ -16,6 +16,8 @@ public class CitrusProductPage {
 
     private SelenideElement productDetails = $("div[class^=right]");
     private SelenideElement productPrice = productDetails.$("[data-price]");
+    private SelenideElement buyButton = productDetails.$("[class*='buyButton'] ");
+
 
     public CitrusProductPage shouldHaveProductTitle(String searchItem) {
         productDetails.shouldHave(text(searchItem));

@@ -1,6 +1,7 @@
 package SelenideTests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import fe.Pages.CitrusPages.CitrusProductListingPage;
 import fe.Pages.CitrusPages.CitrusMainPage;
 import fe.Pages.CitrusPages.CitrusProductPage;
@@ -42,6 +43,8 @@ public class CitrusTest {
 
         productPage.getBasketFragment().openBasket()
                 .shouldHaveProductsQuantity(1)
+                .printProductTitles();
+        productPage.getBasketFragment()
                 .shouldHaveProductTitle(searchItem)
                 .shouldHaveProductPrice(searchItem, productPrice)
                 .shouldHaveProductTotal(searchItem)
