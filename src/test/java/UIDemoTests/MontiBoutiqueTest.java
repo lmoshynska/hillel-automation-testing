@@ -10,6 +10,7 @@ import org.testng.asserts.SoftAssert;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class MontiBoutiqueTest extends UIBaseTest {
 
@@ -45,6 +46,24 @@ public class MontiBoutiqueTest extends UIBaseTest {
         convertedPrices.sort(Collections.reverseOrder());
         double maxPrice = convertedPrices.get(0);
         System.out.println("Max price is: " + maxPrice);
+
+        // Get max price Java8 and then click on it
+        List<WebElement> productInfo = driver.findElements(By.className("data"));
+        System.out.println(productInfo.get(0).findElement(By.cssSelector(".price span"))
+                .getAttribute("data-gtm-price"));
+
+        double maxPrice2 = productInfo.stream()
+                .map(e -> e.findElement(By.cssSelector(".price span")).getAttribute("data-gtm-price"))
+                .mapToDouble(Double::valueOf)
+                .max().orElseThrow(() -> new NoSuchElementException("It appears we don't have a value... That's weird...."));
+
+        System.out.println(maxPrice2);
+
+        productInfo.stream()
+                .filter(e -> e.findElement(By.cssSelector(".price span"))
+                        .getAttribute("data-gtm-price").contains(String.valueOf(maxPrice2)))
+                .findFirst().ifPresentOrElse(WebElement::click,
+                        () -> {throw new NoSuchElementException("No element with maxPrice was found");});
 
     }
 
@@ -85,5 +104,11 @@ public class MontiBoutiqueTest extends UIBaseTest {
             softAssert.assertEquals(designerTitle.getText().toLowerCase(), designer);
         }
         softAssert.assertAll();
+
+        //another way to check designer
+        long numOfBrandOccurrences = designerTitles.stream()
+                .filter(e -> e.getText().equalsIgnoreCase(designer))
+                .count();
+        Assert.assertEquals(numOfBrandOccurrences, designerTitles.size());
     }
 }

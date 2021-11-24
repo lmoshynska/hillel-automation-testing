@@ -4,6 +4,9 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.opentest4j.AssertionFailedError;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
@@ -109,6 +112,13 @@ public class BasketFragment {
                 .map(product -> product.$(productTitle).text())
                 .map(this::getExpectedItemTotalCost)
                 .reduce(0, Integer::sum);
+    }
+
+    public void printProductTitles() {
+        List<String> products = productsInBasket().stream()
+                .map(e -> e.$(productTitle).text())
+                .collect(Collectors.toList());
+        System.out.println("Products in basket: " + products);
     }
 
     private int getIntValueForCost(String itemCost) {
