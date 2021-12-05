@@ -13,13 +13,13 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class RyanairTest {
 
-    @BeforeTest
+    @BeforeTest(alwaysRun = true)
     public void setUp() {
         Configuration.timeout = 10000;
         Configuration.baseUrl = "https://www.ryanair.com";
     }
 
-    @Test
+    @Test(groups = {"smoke", "ui_tests"})
     public void selectTickets() {
 
         String departureCity = "Berlin";

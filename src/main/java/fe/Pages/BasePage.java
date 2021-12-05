@@ -1,4 +1,4 @@
-package fe;
+package fe.Pages;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

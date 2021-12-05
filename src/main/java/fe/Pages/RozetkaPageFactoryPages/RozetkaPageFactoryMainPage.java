@@ -1,6 +1,6 @@
 package fe.Pages.RozetkaPageFactoryPages;
 
-import fe.BasePage;
+import fe.Pages.BasePage;
 import org.openqa.selenium.WebDriver;
 
 public class RozetkaPageFactoryMainPage extends BasePage {

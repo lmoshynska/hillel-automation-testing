@@ -72,7 +72,7 @@ public class PetStoreTest {
 
     }
 
-    @Test
+    @Test(groups = {"api_tests", "smoke"})
     public void addNewPetObjToStore() {
 
         long id = faker.number().randomNumber();
@@ -97,7 +97,7 @@ public class PetStoreTest {
         Assert.assertEquals(actualPet, targetPet);
     }
 
-    @Test
+    @Test(groups = {"api_tests"})
     public void addNewPetBuilder() {
 
         long targetId = faker.number().randomNumber();
@@ -120,7 +120,7 @@ public class PetStoreTest {
         Assert.assertEquals(actualAddedPet, targetPet);
     }
 
-    @Test
+    @Test(groups = {"api_tests", "smoke"})
     public void updateAddedPet() {
 
         long targetId = faker.number().randomNumber();
@@ -150,7 +150,7 @@ public class PetStoreTest {
 
     }
 
-    @Test
+    @Test(groups = {"api_tests"})
     public void deleteAddedPet() {
 
         long targetId = faker.number().randomNumber();
