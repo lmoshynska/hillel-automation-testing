@@ -1,4 +1,4 @@
-package fe.Lesson17;
+package unit;
 
 public class Calculator {
 

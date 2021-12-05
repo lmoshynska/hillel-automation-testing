@@ -10,7 +10,7 @@ public class Guru99Test extends UIBaseTest {
     String validLogin = "1303";
     String validPassword = "Guru99";
 
-    @Test
+    @Test(groups = {"smoke"})
     public void loginWithValidCredentials() {
         driver.get(url);
 
@@ -41,7 +41,7 @@ public class Guru99Test extends UIBaseTest {
         Assert.assertEquals(driver.getCurrentUrl(), url);
     }
 
-    @Test
+    @Test(groups = {"regression"})
     public void loginWithInvalidPassword() {
         String invalidPassword = "123";
 

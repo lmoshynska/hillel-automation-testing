@@ -1,6 +1,6 @@
 package fe.Pages.SwagLabsPages;
 
-import fe.BasePage;
+import fe.Pages.BasePage;
 import fe.Models.User;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

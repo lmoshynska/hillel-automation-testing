@@ -1,6 +1,6 @@
 package TestNgDemoTests;
 
-import fe.Lesson17.Calculator;
+import unit.Calculator;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;

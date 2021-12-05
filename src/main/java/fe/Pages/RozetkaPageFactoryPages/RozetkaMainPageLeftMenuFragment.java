@@ -1,6 +1,6 @@
 package fe.Pages.RozetkaPageFactoryPages;
 
-import fe.BasePage;
+import fe.Pages.BasePage;
 import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

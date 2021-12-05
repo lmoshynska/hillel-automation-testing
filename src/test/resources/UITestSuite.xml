@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="UI Test Suite">
+
+    <test name="UI Selenium Tests">
+        <groups>
+            <run>
+                <include name="smoke"/>
+                <include name="regression"/>
+                <include name="ui_tests"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="UIDemoTests.Guru99Test"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name="UI Page Object Tests">
+        <groups>
+            <run>
+                <include name="regression"/>
+                <include name="ui_tests"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="PageObjectTests.RozetkaPageObjectTest"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name="UI Selenide Tests">
+        <groups>
+            <run>
+                <include name="smoke"/>
+                <include name="ui_tests"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="UIDemoTests.RyanairTest"/>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -14,7 +14,7 @@ public class RozetkaPageObjectTest extends UIBaseTest {
     RozetkaProductsPage productsPage;
     RozetkaProductDetailsPage productDetailsPage;
 
-    @Test
+    @Test(groups = {"regression", "ui_tests"})
     public void testAddingProductToCart() {
         driver.get("https://rozetka.com.ua/");
 
